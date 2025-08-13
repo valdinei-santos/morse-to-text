@@ -9,6 +9,7 @@ import (
 
 // TranslateMorseToText faz a tradução do código morse para texto.
 func TranslateMorseToText(c string) (string, error) {
+
 	texto := ""
 	palavras := strings.Split(c, "   ")
 	for _, palavra := range palavras {

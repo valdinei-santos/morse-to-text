@@ -44,7 +44,6 @@ O projeto **Morse to Text** é uma aplicação escrita em Go que traduz códigos
    ./morse-to-text "--- .."
 
    Exemplo de saída:
-   ```sh
    Código morse: --- ..
    Tradução....: OI
 
@@ -59,7 +58,6 @@ O projeto **Morse to Text** é uma aplicação escrita em Go que traduz códigos
 ### Passos
 
 1. Navegue até o diretório do projeto:
-   ```sh
    cd morse-to-text
 
 2. Execute todos os testes:
@@ -83,4 +81,5 @@ O projeto inclui testes automatizados para os seguintes componentes:
 - **database**: Testa a construção da base de dados e a recuperação de letras.
 - **translator**: Testa a tradução de códigos Morse, incluindo casos de sucesso e erro.
 - **main**: Testa o fluxo completo do programa, incluindo cenários de sucesso e falha.
-Os testes garantem que o programa funcione corretamente em diferentes cenários e que erros sejam tratados adequadamente. ```   
+
+Os testes garantem que o programa funcione corretamente em diferentes cenários e que erros sejam tratados adequadamente.

@@ -1,4 +1,4 @@
-# Morse to Text
+# CLI Morse to Text
 
 ## Descrição Técnica
 
@@ -41,23 +41,29 @@ Por Exemplo:
 ### Passos
 
 1. Clone o repositório:
-   ```sh
+   ```bash
    git clone https://github.com/valdinei-santos/morse-to-text.git
    cd morse-to-text
    ```
 
 2. Compile o programa:
-   ```sh
-   ./gera-executavel.sh
+   ```bash
+   make build
+   ```
+   Saída:
+   ```bash
+   Build completo: morse-to-text gerado
    ```
 
 3. Execute o programa passando um código Morse como argumento:
-   ```sh
+   ```bash
    ./morse-to-text "--- .."
+   ```
 
-   Exemplo de saída:
-     Código morse: --- ..
-     Tradução....: OI
+   Saída:
+   ```bash
+   Código morse: --- ..
+   Tradução....: OI
    ```
 
 ---
@@ -67,27 +73,33 @@ Por Exemplo:
 ### Passos
 
 1. Navegue até o diretório do projeto:
-   ```sh
+   ```bash
    cd morse-to-text
    ```
 
 2. Execute todos os testes:
-   ```sh
-   go test ./...
+   ```bash
+   make test
    ```
 
    Exemplo de saída:
-   ```sh
+   ```bash
    ok      github.com/valdinei-santos/morse-to-text/cmd/morse-to-text      0.024s
    ok      github.com/valdinei-santos/morse-to-text/internal/checkarguments        0.028s
    ok      github.com/valdinei-santos/morse-to-text/internal/database      0.023s
    ok      github.com/valdinei-santos/morse-to-text/internal/translator    0.023s
    ```
 
-3. Para rodar um teste específico, use o comando:
-   ```sh
+3. Para rodar um teste específico, use o comando **go test**, conforme abaixo:
+   ```bash
    go test -run TestNomeDoTeste ./caminho/do/pacote
    ```
+
+4. Para ver a cobertura dos testes na aplicação:
+   ```bash
+   make cover
+   ``` 
+
 
 ### Estrutura de Testes
 O projeto inclui testes automatizados para os seguintes componentes:
@@ -96,8 +108,6 @@ O projeto inclui testes automatizados para os seguintes componentes:
 - **database**: Testa a construção da base de dados e a recuperação de letras.
 - **translator**: Testa a tradução de códigos Morse, incluindo casos de sucesso e erro.
 - **main**: Testa o fluxo completo do programa, incluindo cenários de sucesso e falha.
-
-Os testes garantem que o programa funcione corretamente em diferentes cenários e que erros sejam tratados adequadamente.
 
 ## Autor
 

@@ -76,6 +76,9 @@ Por Exemplo:
 3. Para rodar um teste específico, use o comando **go test**, conforme abaixo:
    ```bash
    go test -run TestNomeDoTeste ./caminho/do/pacote
+
+   Por exemplo:
+     go test -run TestGetArguments_WithValidArgument ./internal/checkarguments
    ```
 
 4. Para ver a cobertura dos testes na aplicação:

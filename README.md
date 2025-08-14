@@ -2,8 +2,10 @@
 
 ## Descrição Técnica
 
-O projeto **Morse to Text** é uma aplicação CLI escrita em Go que traduz códigos Morse para texto. 
-Os códigos Morse devem seguir o padrão de 1 espaço em branco para separar os códigos que representam as letras e 3 espaços em branco para separar os códigos que representam palavras.
+O projeto **Morse to Text** é uma aplicação CLI escrita em Go que traduz códigos Morse para texto.  
+O código Morse não diferencia maiúsculas de minúsculas, tradicionalmente letras maiúsculas são usadas para representação.  
+Quando a mensagem é escrita em
+código Morse, um único espaço é usado para separar os códigos dos caracteres e 3 espaços são usados para separar palavras.  
 ```
 Por Exemplo:
 ".... . -.--   .--- ..- -.. .." traduzido é HEY JUDI
@@ -12,24 +14,6 @@ Por Exemplo:
 
 ![Imagem Codigo Morse](images/Codigos-Morse.png)
 
-
-### Estrutura do Projeto
-
-- **cmd/morse-to-text**: Contém o ponto de entrada principal do programa (`main.go`).
-- **internal/checkarguments**: Gerencia a validação e o processamento dos argumentos de entrada.
-- **internal/database**: Contém a base de dados de tradução de código Morse para texto.
-- **internal/translator**: Implementa a lógica de tradução de código Morse para texto.
-- **images**: Contém as imagens usadas na documentação do projeto.
-
-### Fluxo de Execução
-
-1. O programa recebe um código Morse como argumento via linha de comando.
-2. O pacote `checkarguments` valida os argumentos fornecidos.
-3. O pacote `database` inicializa a base de dados de tradução.
-4. O pacote `translator` realiza a tradução do código Morse para texto.
-5. O resultado é exibido no terminal.
-
----
 
 ## Instruções para Rodar o Programa
 
@@ -66,7 +50,6 @@ Por Exemplo:
    Tradução....: OI
    ```
 
----
 
 ## Instruções para Rodar os Testes
 
@@ -108,6 +91,26 @@ O projeto inclui testes automatizados para os seguintes componentes:
 - **database**: Testa a construção da base de dados e a recuperação de letras.
 - **translator**: Testa a tradução de códigos Morse, incluindo casos de sucesso e erro.
 - **main**: Testa o fluxo completo do programa, incluindo cenários de sucesso e falha.
+
+
+## Detalhes de Implementação
+
+### Estrutura do Projeto
+
+- **cmd/morse-to-text**: Contém o ponto de entrada principal do programa (`main.go`).
+- **internal/checkarguments**: Gerencia a validação e o processamento dos argumentos de entrada.
+- **internal/database**: Contém a base de dados de tradução de código Morse para texto.
+- **internal/translator**: Implementa a lógica de tradução de código Morse para texto.
+- **images**: Contém as imagens usadas na documentação do projeto.
+
+### Fluxo de Execução
+
+1. O programa recebe um código Morse como argumento via linha de comando.
+2. O pacote `checkarguments` valida os argumentos fornecidos.
+3. O pacote `database` inicializa a base de dados de tradução.
+4. O pacote `translator` realiza a tradução do código Morse para texto.
+5. O resultado é exibido no terminal.
+
 
 ## Autor
 

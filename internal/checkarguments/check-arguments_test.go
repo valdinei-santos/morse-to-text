@@ -7,10 +7,26 @@ import (
 )
 
 func TestGetArguments_WithValidArgument(t *testing.T) {
-	// Caso de sucesso: Chamada da função com slice de strings com parametro.
+	// Caso de sucesso 1: Chamada da função com slice de strings com parametro.
 
-	expectedMorseCode := "--- --"
+	expectedMorseCode := "--- .."
 	args := []string{"./morse-to-text", expectedMorseCode}
+	morseCode, err := GetArguments(args)
+	if err != nil {
+		t.Errorf("Não esperava erro, mas a função retornou: %s", err)
+	}
+
+	if morseCode != expectedMorseCode {
+		t.Errorf("Esperava: %s, mas a função retornou: %s", expectedMorseCode, morseCode)
+	}
+}
+
+func TestGetArguments_ArgumentsWithSpace(t *testing.T) {
+	// Caso de sucesso 2: Chamada da função com slice de strings com parametro contendo espaço em branco no inicio e final.
+
+	inputMorseCode := "     --- ..  "
+	expectedMorseCode := "--- .."
+	args := []string{"./morse-to-text", inputMorseCode}
 	morseCode, err := GetArguments(args)
 	if err != nil {
 		t.Errorf("Não esperava erro, mas a função retornou: %s", err)
